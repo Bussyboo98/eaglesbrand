@@ -30,3 +30,6 @@ def contact(request):
 def services(request):
     return render(request, 'eaglesbrandapp/services.html')
 
+def projects(request):
+    return render(request, 'eaglesbrandapp/projects.html')
+

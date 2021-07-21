@@ -3268,7 +3268,7 @@ hero-btn {
   font-size: 12px;
   font-weight: 100;
   font-family: "Roboto", sans-serif;
-  text-transform: uppercase;
+ 
 }
 
 /* line 44, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_headerMenu.scss */
@@ -3567,15 +3567,47 @@ hero-btn {
 
 /* line 31, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_h1-hero.scss */
 .slider-area2 {
-  background-image: url(../img/hero/hero2.jpg);
+  background-image: url(../img/gallery/dd\ \(2\).jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
 
+.slider-area3 {
+  background-image: url(../img/gallery/lo.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 200px;
+}
+
+.slider-area4 {
+  background-image: url(../img/gallery/f.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.slider-area9 {
+  background-image: url(../img/gallery/kk.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.slider-area5 {
+  background-image: url(../img/gallery/ww.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.slider-area6 {
+  background-image: url(../img/gallery/yy.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+
 /* line 37, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_h1-hero.scss */
 .slider-area {
   margin-top: -1px;
-  background-image: url(../img/hero/h1_hero.jpg);
+  background-image: url(../img/gallery/dd\ \(1\).jpg);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -3631,7 +3663,7 @@ hero-btn {
   font-size: 85px;
   font-weight: 800;
   margin-bottom: 14px;
-  color: #000000;
+  color: #ffffff;
   font-family: "Sarabun", sans-serif;
   line-height: 1.2;
   margin-bottom: 33px;
@@ -3679,7 +3711,7 @@ hero-btn {
 /* line 101, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_h1-hero.scss */
 .slider-area .hero__caption p {
   font-size: 16px;
-  color: #000000;
+  color: #ffffff;
   font-family: "Roboto", sans-serif;
   margin-bottom: 39px;
   margin-bottom: 7px;
@@ -4238,7 +4270,7 @@ hero-btn {
   line-height: 13px;
   font-family: "Roboto", sans-serif;
   position: relative;
-  color: #0000ff;
+  color: #ffffff;
   font-weight: 300;
   font-size: 14px;
   display: block;
@@ -4255,7 +4287,7 @@ hero-btn {
   left: 0;
   top: 50%;
   transform: translateY(-50%);
-  background: #e94d65;
+  background: #ffffff;
 }
 
 /* line 56, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_services_section.scss */
