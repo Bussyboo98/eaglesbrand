@@ -2767,8 +2767,8 @@ hero-btn {
 
 /* line 797, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_common.scss */
 .section-padding30 {
-  padding-top: 195px;
-  padding-bottom: 170px;
+  padding-top: 70px;
+  padding-bottom: 70px;
 }
 
 @media only screen and (min-width: 1200px) and (max-width: 1600px) {
@@ -2782,8 +2782,8 @@ hero-btn {
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   /* line 797, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_common.scss */
   .section-padding30 {
-    padding-top: 50px;
-    padding-bottom: 110px;
+    padding-top: 10px;
+    padding-bottom: 100px;
   }
 }
 
@@ -3093,7 +3093,7 @@ hero-btn {
 
 /* line 985, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_common.scss */
 .section-tittle2 h2 {
-  color: #fff;
+  color: rgb(0, 0, 0);
 }
 
 @media (max-width: 575px) {
@@ -3573,7 +3573,7 @@ hero-btn {
 }
 
 .slider-area3 {
-  background-image: url(../img/gallery/lo.jpg);
+  background-image: url(../img/gallery/you\ \(15\).jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 200px;
@@ -3585,7 +3585,7 @@ hero-btn {
   background-size: cover;
 }
 .slider-area9 {
-  background-image: url(../img/gallery/kk.jpg);
+  background-image: url(../img/gallery/you\ \(1\).jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -3595,7 +3595,7 @@ hero-btn {
   background-repeat: no-repeat;
   background-size: cover;
 }
-
+.
 .slider-area6 {
   background-image: url(../img/gallery/yy.jpg);
   background-repeat: no-repeat;
@@ -4133,7 +4133,7 @@ hero-btn {
 .support-company-area .right-caption .support-caption p.pera-top {
   font-size: 20px;
   font-weight: 500;
-  color: #fff;
+  color: rgb(0, 0, 0);
   font-family: "Roboto", sans-serif;
 }
 
