@@ -33,3 +33,9 @@ def services(request):
 def projects(request):
     return render(request, 'eaglesbrandapp/projects.html')
 
+def service_detail(request):
+    return render(request, 'eaglesbrandapp/service-detail.html')
+
+def project_detail(request):
+    return render(request, 'eaglesbrandapp/project_detail.html')
+
