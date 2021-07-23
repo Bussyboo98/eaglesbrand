@@ -70,11 +70,7 @@
     color: #2e2e2f !important;
 }
 
-path[Attributes Style] {
-    fill-rule: evenodd;
-    fill: #83C63F;
-    d: path("M 57.053 48.209 L 42.79 48.209 L 52.299 29.242 L 38.036 29.242 L 38.036 0.79 L 66.562 0.79 L 66.562 29.242 L 57.053 48.209 Z M 4.755 48.209 L 14.263 29.242 L 0 29.242 L 0 0.79 L 28.527 0.79 L 28.527 29.242 L 19.018 48.209 L 4.755 48.209 Z");
-}
+
 
 .team-area .single-team .team-caption span::before {
     background: #fff !important;
