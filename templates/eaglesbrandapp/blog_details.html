@@ -208,12 +208,12 @@
                      <h5 style="color: black; font-size: 40px; font-family: serif;">Comments</h5>
                      {% for comment in comm %}
                      <div class="media align-items-center">
-                        <img src="{% static 'eaglesbrandapp/assets/img/gallery/avatar.jpg' %}" alt="">
+                        <img src="{% static 'eaglesbrandapp/assets/img/gallery/avatar.jpg' %}" style="padding:20px ;" alt="">
                         <div class="media-body">
                            <a href="#"></a>
                               <h4 style="text-transform: capitalize; font-size: 20px;font-weight: 600;  font-family: cursive;"> {{ comment.user_name}} </h4>
                            </a>
-                           <p>{{ comment.comment_content}}</p>
+                           <p>{{ comment.comment_content}}<span>      |   </span>{{ comment.timestamp|timesince}} ago</p>
                         </div>
                      </div>
                      {% endfor %}
