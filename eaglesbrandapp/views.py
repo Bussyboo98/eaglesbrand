@@ -47,7 +47,7 @@ def project_detail(request, slug):
     return render(request, 'eaglesbrandapp/project_detail.html', {'project': project_post})
 
 def search(request):
-    most_recent = BlogPost.objects.order_by('-created')[:6]
+    most_recent = BlogPost.objects.order_by('created')[:6]
     queryset = BlogPost.objects.all()
     query = request.GET.get('q')
     if query:
@@ -62,18 +62,20 @@ def search(request):
     }
     return render(request, 'eaglesbrandapp/search_results.html', context)
 
-def blog_detail(request, slug):
-    most_recent = BlogPost.objects.order_by('-created')[:6]
-    single_post = BlogPost.objects.get(slug=slug)
-    comments = Comment.objects.filter().order_by('-timestamp')
+def blog_detail(request, pk):
+    most_recent = BlogPost.objects.order_by('created')[:6]
+    
+    single_post = get_object_or_404(BlogPost,  pk=pk)
+    comments = Comment.objects.filter(post=pk).order_by('-timestamp')
     if request.method == "POST":
         form = CommentForm(request.POST)
         if form.is_valid():
             comment = form.save(commit=False) 
             comment.post = single_post
             comment.save()
-            return redirect('eaglesbrandapp:blog_detail', slug=single_post.slug)
+            return redirect('eaglesbrandapp:blog_detail', pk=single_post.pk)
             single_post = {'form': form, 'most_recent': most_recent,}
     else:
         form = CommentForm()
     return render(request, 'eaglesbrandapp/blog_details.html', {'comm':comments, 'form':form,  'most_recent':most_recent, 'single':single_post, 'sipst':single_post})
+ 

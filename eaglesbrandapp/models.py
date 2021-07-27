@@ -8,7 +8,7 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.shortcuts import reverse
 from tinymce import HTMLField
 from fontawesome_5.fields import IconField
-
+import datetime
 
 
 # Create your models here.
@@ -25,7 +25,9 @@ class BlogPost(models.Model):
     author = models.CharField(max_length=50, verbose_name='Posted By')
     pst_image1 = ImageField('Author Image', upload_to='uploads/', blank=True, null=True)
     content1 = models.TextField(verbose_name='Blog Summary', max_length=300,)
-    
+    today = datetime.date.today()
+    months = ['zero','January','February','March','April','May','June','July','August','September','October','November','December']
+    current_month = months[today.month]
 
     def __str__(self):
         return self.pst_title
@@ -40,6 +42,10 @@ class BlogPost(models.Model):
     def img1_url(self):
         if self.pst_image1:
             return self.pst_image1.url
+    
+    @property
+    def get_comments(self):
+        return self.comments.all()
 
     def get_post_url(self):
         return reverse('eaglesbrandapp:blog_detail', kwargs={
