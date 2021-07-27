@@ -1,0 +1,6 @@
+.env
+db.sqlite3
+__pycache__
+eaglesbrandapp/__pycache__
+eaglesbrandsolutions/__pycache__
+migrations/__pycache__
