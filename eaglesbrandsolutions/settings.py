@@ -31,7 +31,7 @@ EMAIL_HOST_PASSWORD = config('SENDGRIG_API')
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 FROM_HOST = 'EaglesBrand Integrated Engineering Solutions Limited <info@eaglesbrandsolutions.com>'
-
+RECIEVER_MAIL = ['info@eaglesbrandsolutions.com', 'nonwaz78@gmail.com',]
 
 
 # Quick-start development settings - unsuitable for production

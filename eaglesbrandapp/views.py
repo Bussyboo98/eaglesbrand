@@ -8,6 +8,7 @@ from django.core import mail
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
 
+from django.conf import settings
 from django.contrib import messages
 from django.db.models import Count, Q
 from eaglesbrandapp.forms import CommentForm
