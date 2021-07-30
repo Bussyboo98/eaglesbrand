@@ -283,40 +283,24 @@ Home
                 </div>
             </div>
             <div class="row">
+                {% for b in blog %}
                 <div class="col-xl-6 col-lg-6 col-md-6">
                     <div class="home-blog-single mb-30">
                         <div class="blog-img-cap">
                             <div class="blog-img">
-                                <img src="../../static/eaglesbrandapp/assets/img/gallery/taylor-grote-UiVe5QvOhao-unsplash.jpg" style="max-height: 380px; min-height: 380px;" alt="">
+                                <img src="{{ b.img_url }}" style="max-height: 380px; min-height: 380px;" alt="">
                                 <ul>
-                                    <li>By Admin   -   October 27, 2020</li>
+                                    <li>By {{ b.user }}   -  {{ b.current_month }}, {{ b.created.day }} {{ b.created.year}}</li>
                                 </ul>
                             </div>
-                            <div class="blog-cap">
-                                <h3><a href="blog_details.html">16 Easy Ideas to Use in  Everyday</a></h3>
-                                <p>Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnua Quis ipsum suspendisse ultrices gra.</p>
-                                <a href="blog_details.html" class="more-btn">Read more</a>
+                            <div class="blog-cap" style="min-height: 200px; max-height: 200px;">
+                                <h3><a href="{%url 'eaglesbrandapp:blog_detail' b.id %}">{{ b.content|safe|truncatewords:15| slice:":400"  }}</p>
+                                <a href="{%url 'eaglesbrandapp:blog_detail' b.id %}" class="more-btn">Read more</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-6 col-lg-6 col-md-6">
-                    <div class="home-blog-single mb-30">
-                        <div class="blog-img-cap">
-                            <div class="blog-img">
-                                <img src="{% static 'eaglesbrandapp/assets/img/gallery/about.jpg' %}" alt="">
-                                <ul>
-                                    <li>By Admin   -   October 27, 2020</li>
-                                </ul>
-                            </div>
-                            <div class="blog-cap">
-                                <h3><a href="blog_details.html">16 Easy Ideas to Use in  Everyday</a></h3>
-                                <p>Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnua Quis ipsum suspendisse ultrices gra.</p>
-                                <a href="blog_details.html" class="more-btn">Read more</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
             <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 d-flex justify-content-center align-items-center">
