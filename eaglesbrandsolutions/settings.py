@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 import os
 from django.contrib.messages import constants as messages
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -23,6 +24,13 @@ MEDIA_URL = '/media/'
 STATICFILES_DIRS = [STATIC_DIR,]
 FONTAWESOME_5_CSS='static/frontend/css/all.min.css'
 
+
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = 'apikey' #this is exactly the value 'apikey'
+EMAIL_HOST_PASSWORD = config('SENDGRIG_API')
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+FROM_HOST = 'EaglesBrand Integrated Engineering Solutions Limited <info@eaglesbrandsolutions.com>'
 
 
 

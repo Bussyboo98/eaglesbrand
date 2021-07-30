@@ -1,4 +1,4 @@
-<div class="col-lg-4">
+<div class="col-lg-5">
     <div class="blog_right_sidebar">
         <aside class="single_sidebar_widget search_widget">
             <form action="{% url 'search' %}" >
@@ -19,7 +19,7 @@
             {% for e in most_recent %}
             <div class="media post_item">
                
-                <img src="{{ e.img_url }}" style="max-height: 100px; min-height: 100px;" alt="post">
+                <img src="{{ e.img_url }}" style="max-height: 100px; min-height: 100px; min-width: 150px; max-width: 150px;" alt="post">
                 <div class="media-body">
                     <a href="blog_details.html">
                         <h3>{{ e.pst_title}}</h3>
