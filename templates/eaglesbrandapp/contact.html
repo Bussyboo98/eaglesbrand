@@ -71,7 +71,12 @@ Contact
                         <h2 class="contact-title">Get in Touch</h2>
                     </div>
                     <div class="col-lg-8">
-                        <form class="form-contact contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
+                        <form class="form-contact contact_form" method="POST">
+                            {% if messages %}
+                            {% for m in messages%}
+                              <div class="alert {{ m.tags }}">{{ m }}</div>
+                            {% endfor %}
+                          {% endif %}
                             <div class="row">
                                 <div class="col-12">
                                     <div class="form-group">
@@ -80,44 +85,51 @@ Contact
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <input class="form-control valid" name="name" id="name" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" placeholder="Enter your name">
+                                        <input class="form-control valid" name="firstname" id="name" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your First name'" required placeholder="Enter your First name">
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <input class="form-control valid" name="email" id="email" type="email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" placeholder="Email">
+                                        <input class="form-control valid" name="lastname" id="name" type="name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your Last name'" required placeholder="Enter your Last name">
                                     </div>
                                 </div>
-                                <div class="col-12">
+                                <div class="col-sm-6">
                                     <div class="form-group">
-                                        <input class="form-control" name="subject" id="subject" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'" placeholder="Enter Subject">
+                                        <input class="form-control valid" name="phone" id="phone" type="tel" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your phone number'" required placeholder="Enter your phone number">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <input class="form-control valid" name="email" id="email" type="email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" required placeholder="Email">
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group mt-3">
                                 <button type="submit" class="button button-contactForm boxed-btn">Send</button>
                             </div>
+                            {% csrf_token %}
                         </form>
                     </div>
-                    <div class="col-lg-3 offset-lg-1">
+                    <div class="col-lg-3">
                         <div class="media contact-info">
                             <span class="contact-info__icon"><i class="ti-home" style="color: #83c63f;"></i></span>
                             <div class="media-body">
-                                <h3>Buttonwood, California.</h3>
-                                <p>Rosemead, CA 91770</p>
+                                <h3>26, Morenikeji Street Lagos.</h3>
+                                <p> Oke Ira Road, Lagos.</p>
                             </div>
                         </div>
                         <div class="media contact-info">
                             <span class="contact-info__icon"><i class="ti-tablet" style="color: #83c63f;"></i></span>
                             <div class="media-body">
-                                <h3>+1 253 565 2365</h3>
+                                <h3>+234 8169 653 662</h3>
                                 <p>Mon to Fri 9am to 6pm</p>
                             </div>
                         </div>
                         <div class="media contact-info">
                             <span class="contact-info__icon"><i class="ti-email" style="color: #83c63f;"></i></span>
                             <div class="media-body">
-                                <h3>support@colorlib.com</h3>
+                                <h3>sales@eaglesbrandsolutions.com</h3>
+                                <h3>service@eaglesbrandsolutions.com</h3>
                                 <p>Send us your query anytime!</p>
                             </div>
                         </div>

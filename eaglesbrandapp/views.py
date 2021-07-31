@@ -8,16 +8,26 @@ from django.core import mail
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
 
+from django.conf import settings
 from django.contrib import messages
 from django.db.models import Count, Q
 from eaglesbrandapp.forms import CommentForm
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 
 # Create your views here.
 
 
 def index(request):
-    return render(request, 'eaglesbrandapp/index.html')
+    service_home = Services.objects.all()[:3]
+    project_home = Project.objects.order_by('-created')[:4]
+    blog = BlogPost.objects.order_by('-created')
+    context = {
+        'service_home': service_home,
+        'project_home': project_home,
+        'blog': blog
+    }
+    return render(request, 'eaglesbrandapp/index.html', context)
 
 def about(request):
     return render(request, 'eaglesbrandapp/about.html')
@@ -25,9 +35,44 @@ def about(request):
 def blog(request):
     most_recent = BlogPost.objects.order_by('created')[:6]
     posts = BlogPost.objects.order_by('-created')
-    return render(request, 'eaglesbrandapp/blog.html',  {'post':posts, 'most_recent':most_recent})
+    paginated_filter = Paginator(posts, 5)
+    page_number = request.GET.get('page')
+    person_page_obj = paginated_filter.get_page(page_number)
+    context = {
+        'person_page_obj': posts, 
+        'most_recent': most_recent,
+        'post':posts, 
+        'most_recent':most_recent
+    }
+    context['person_page_obj'] = person_page_obj  
+    person_page_obj = paginated_filter.get_page(page_number)
+    return render(request, 'eaglesbrandapp/blog.html', context)
 
 def contact(request):
+    if request.method == 'POST':
+        firstname = request.POST.get('firstname')
+        lastname = request.POST.get('lastname')
+        phone = request.POST.get('phone')
+        email = request.POST.get('email')
+        message = request.POST.get('message')
+        subject = 'Eaglesrand Solutions'
+        context = {
+            'firstname':firstname,
+            'lastname':lastname,
+            'phone':phone,
+            'email':email,
+            'message': message
+        }
+        html_message = render_to_string('eaglesbrandapp/mail-template.html', context)
+        plain_message = strip_tags(html_message)
+        from_email = settings.FROM_HOST
+        send = mail.send_mail(subject, plain_message, from_email, 
+                      settings.RECIEVER_MAIL, html_message=html_message, fail_silently=False)
+        if send:
+            messages.success(request, 'Email sent succesfully!')
+        else:
+            messages.error(request, 'Mail not sent! Please make sure you are connected to internet')
+
     return render(request, 'eaglesbrandapp/contact.html')
 
 def services(request):

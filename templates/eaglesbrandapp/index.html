@@ -23,7 +23,7 @@ Home
                                     <p data-animation="fadeInLeft" data-delay=".9s">Mollit anim laborum.Dvcuis aute serunt  iruxvfg dhjkolohr indd re voluptate<br> velit esscillumlore eu quife nrulla parihatur.</p>
                                     <!-- Hero-btn -->
                                     <div class="hero__btn" data-animation="fadeInLeft" data-delay="1.1s">
-                                        <a href="industries.html" class="btn hero-btn">Our Services</a>
+                                        <a href="{%url 'eaglesbrandapp:services' %}" class="btn hero-btn">Our Services</a>
                                     </div>
                                 </div>
                             </div>
@@ -41,7 +41,7 @@ Home
                                     <p data-animation="fadeInLeft" data-delay=".9s">Mollit anim laborum.Dvcuis aute serunt  iruxvfg dhjkolohr indd re voluptate<br> velit esscillumlore eu quife nrulla parihatur.</p>
                                     <!-- Hero-btn -->
                                     <div class="hero__btn" data-animation="fadeInLeft" data-delay="1.1s">
-                                        <a href="industries.html" class="btn hero-btn">Our Services</a>
+                                        <a href="{%url 'eaglesbrandapp:services' %}" class="btn hero-btn">Our Services</a>
                                     </div>
                                 </div>
                             </div>
@@ -66,42 +66,22 @@ Home
                 </div>
             </div>
             <div class="row">
+                {% if service_home %}
+                {% for h in service_home %}
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="single-cat text-center mb-50" style="min-height: 410px; max-height: 410px;">
                         <div class="cat-icon">
-                            <span class="flaticon-development"></span>
+                            <span class="">{{ h.icon.as_html }}</span>
                         </div>
                         <div class="cat-cap">
-                            <h5><a href="services.html">OEM Representation </a></h5>
-                            <p>There are many variations of passages of lorem Ipsum available but the new majority have suffered.</p>
+                            <h5><a href="{{ h.get_service_url }}">{{ h.pst_title}}</a></h5>
+                            <p>{{ h.content|safe|truncatewords:20| slice:":400"  }}</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="single-cat text-center mb-50" style="min-height: 410px; max-height: 410px;">
-                        <div class="cat-icon">
-                            <span class="flaticon-result"></span>
-                        </div>
-                        <div class="cat-cap">
-                            <h5><a href="services.html">Electrical Engineering System Design</a></h5>
-                            <p>There are many variations of passages of lorem Ipsum available but the new majority have suffered.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="single-cat text-center mb-50" style="min-height: 410px; max-height: 410px;">
-                        <div class="cat-icon">
-                            <span class="flaticon-team"></span>
-                        </div>
-                        <div class="cat-cap">
-                            <h5><a href="services.html">Consultancy Services</a></h5>
-                            <p>There are many variations of passages of lorem Ipsum available but the new majority have suffered.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-12 col-lg-12 col-md-12 d-flex justify-content-center align-items-center">
-                    <a href="{%url 'eaglesbrandapp:services' %}" target="_blank" class="btn btn-black f-left">More</a>
-                </div>
+                
+                {% endfor %}
+                {% endif %}
             </div>
         </div>
     </div>
@@ -147,54 +127,25 @@ Home
                 </div>
             </div>
             <div class="row">
+                {% if project_home %}
+                {% for q in project_home %}
                 <div class="col-lg-6 col-md-6 col-sm-10">
                     <div class="single-services mb-100">
                         <div class="services-img">
-                            <img src="{% static 'eaglesbrandapp/assets/img/gallery/you (6).jpg' %}" alt="">
+                            <img src="{{ q.img_url }}" alt="">
                             </div>
                             <div class="services-caption">
-                            <span>Electrical Engineering</span>
-                            <p><a href="#">Hardware Repair And Reconstruction At Lekki</a></p>
+                            <span>{{ q.pst_title}}</span>
+                            <p><a href="{{ q.get_project_url }}">{{ q.content|safe|truncatewords:20| slice:":400"  }}</a></p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-6 col-sm-10">
-                    <div class="single-services mb-100">
-                        <div class="services-img">
-                            <img src="../../static/eaglesbrandapp/assets/img/gallery/you (2).jpg" alt="">
-                            </div>
-                            <div class="services-caption">
-                            <span>Electrical Engineering</span>
-                            <p><a href="#">Completed A Switch Change At Ojuelegba</a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-10">
-                    <div class="single-services mb-100">
-                        <div class="services-img">
-                            <img src="{% static 'eaglesbrandapp/assets/img/gallery/cytonn-photography-n95VMLxqM2I-unsplash.jpg' %}" alt="">
-                            </div>
-                            <div class="services-caption">
-                            <span>General Contracts</span>
-                            <p><a href="#">A Happy Completed Project At Iju Ishaga</a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-10">
-                    <div class="single-services mb-100">
-                        <div class="services-img">
-                            <img src="{% static 'eaglesbrandapp/assets/img/gallery/gg.jpg' %}" alt="">
-                            </div>
-                            <div class="services-caption">
-                            <span>Strategy planing</span>
-                            <p><a href="#">Within the construction industry as their overdraft</a></p>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
+                {% endif %}
             </div>
             <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 d-flex justify-content-center align-items-center">
-                    <a href="#" target="_blank" class="btn btn-black f-left">More Projects</a>
+                    <a href="{%url 'eaglesbrandapp:projects' %}" target="_blank" class="btn btn-black f-left">More Projects</a>
                 </div>
             </div>
         </div>
@@ -313,7 +264,7 @@ Home
                     </div>
                 </div>
                 <div class="col-xl-2 col-lg-3 col-md-4">
-                    <a href="#" class="btn btn-black f-right">More About Us</a>
+                    <a href="{%url 'eaglesbrandapp:about' %}" class="btn btn-black f-right">More About Us</a>
                 </div>
             </div>
         </div>
@@ -332,40 +283,24 @@ Home
                 </div>
             </div>
             <div class="row">
+                {% for b in blog %}
                 <div class="col-xl-6 col-lg-6 col-md-6">
                     <div class="home-blog-single mb-30">
                         <div class="blog-img-cap">
                             <div class="blog-img">
-                                <img src="../../static/eaglesbrandapp/assets/img/gallery/taylor-grote-UiVe5QvOhao-unsplash.jpg" style="max-height: 380px; min-height: 380px;" alt="">
+                                <img src="{{ b.img_url }}" style="max-height: 380px; min-height: 380px;" alt="">
                                 <ul>
-                                    <li>By Admin   -   October 27, 2020</li>
+                                    <li>By {{ b.user }}   -  {{ b.current_month }}, {{ b.created.day }} {{ b.created.year}}</li>
                                 </ul>
                             </div>
-                            <div class="blog-cap">
-                                <h3><a href="blog_details.html">16 Easy Ideas to Use in  Everyday</a></h3>
-                                <p>Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnua Quis ipsum suspendisse ultrices gra.</p>
-                                <a href="blog_details.html" class="more-btn">Read more</a>
+                            <div class="blog-cap" style="min-height: 200px; max-height: 200px;">
+                                <h3><a href="{%url 'eaglesbrandapp:blog_detail' b.id %}">{{ b.content|safe|truncatewords:15| slice:":400"  }}</p>
+                                <a href="{%url 'eaglesbrandapp:blog_detail' b.id %}" class="more-btn">Read more</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-6 col-lg-6 col-md-6">
-                    <div class="home-blog-single mb-30">
-                        <div class="blog-img-cap">
-                            <div class="blog-img">
-                                <img src="{% static 'eaglesbrandapp/assets/img/gallery/about.jpg' %}" alt="">
-                                <ul>
-                                    <li>By Admin   -   October 27, 2020</li>
-                                </ul>
-                            </div>
-                            <div class="blog-cap">
-                                <h3><a href="blog_details.html">16 Easy Ideas to Use in  Everyday</a></h3>
-                                <p>Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnua Quis ipsum suspendisse ultrices gra.</p>
-                                <a href="blog_details.html" class="more-btn">Read more</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
             <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 d-flex justify-content-center align-items-center">

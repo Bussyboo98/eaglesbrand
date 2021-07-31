@@ -35,10 +35,10 @@ Search Result
                             <article class="blog_item">
                                 <div class="blog_item_img">
                                     <img class="card-img rounded-0" src="{{ t.img_url }}" alt="">
-                                    <a href="#" class="blog_item_date">
-                                        <h3>{{ t.created }}</h3>
-                                        
-                                    </a>
+                                    <div class="blog_item_date">
+                                        <h3>{{ t.created.day }}</h3>
+                                        <p>{{ t.current_month }}</p>
+                                    </div>
                                 </div>
 
                                 <div class="blog_details">
