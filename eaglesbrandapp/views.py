@@ -109,7 +109,6 @@ def search(request):
 
 def blog_detail(request, pk):
     most_recent = BlogPost.objects.order_by('created')[:6]
-    
     single_post = get_object_or_404(BlogPost,  pk=pk)
     comments = Comment.objects.filter(post=pk).order_by('-timestamp')
     if request.method == "POST":
