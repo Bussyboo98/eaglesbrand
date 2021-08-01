@@ -1,0 +1,88 @@
+{% extends 'eaglesbrandapp/base.html' %}
+{% load static %}
+<!DOCTYPE html>
+
+{% block title%}
+Search Result
+{% endblock %}
+
+
+
+{% block content %}
+    <main>
+        <div class="slider-area5">
+            <div class="slider-height2 hero-overly2 d-flex align-items-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="hero-cap hero-cap2 text-center">
+                                <h2 style="color: white; font-size: 70px; font-weight: 800;">Blog Search</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h2>Result for your search: </h2>
+        <section class="blog_area section-padding">
+            <div class="container">
+                <div class="row">
+                   
+                    <div class="col-lg-8 mb-5 mb-lg-0">
+                        {% for t in queryset %}
+                        <div class="blog_left_sidebar">
+                            
+                            <article class="blog_item">
+                                <div class="blog_item_img">
+                                    <img class="card-img rounded-0" src="{{ t.img_url }}" alt="">
+                                    <div class="blog_item_date">
+                                        <h3>{{ t.created.day }}</h3>
+                                        <p>{{ t.current_month }}</p>
+                                    </div>
+                                </div>
+
+                                <div class="blog_details">
+                                    <a class="d-inline-block" href="blog_details.html">
+                                        <h2>{{ t.pst_title}}</h2>
+                                    </a>
+                                    <p> {{ t.content|safe|truncatewords:30| slice:":400"  }}</p>
+                                    <ul class="blog-info-link">
+                                        <li><a href="#"><i class="fa fa-user"></i>Posted By:</a></li>
+                                        <li><a href="#"><i></i>{{ t.user }}</a></li>
+                                    </ul>
+                                </div>
+                               
+                            </article>
+                            
+                            
+                            <nav class="blog-pagination justify-content-center d-flex">
+                                <ul class="pagination">
+                                    <li class="page-item">
+                                        <a href="#" class="page-link" aria-label="Previous">
+                                            <i class="ti-angle-left"></i>
+                                        </a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a href="#" class="page-link">1</a>
+                                    </li>
+                                    <li class="page-item active">
+                                        <a href="#" class="page-link">2</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a href="#" class="page-link" aria-label="Next">
+                                            <i class="ti-angle-right"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        {% endfor %}
+                         
+                    </div>
+                    {% include 'eaglesbrandapp/blog_search.html' %}
+                </div>
+               
+            </div>
+        </section>
+    </main>
+{% endblock %}

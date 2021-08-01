@@ -1,9 +1,10 @@
 {% extends 'eaglesbrandapp/base.html' %}
 {% load static %}
+{% load fontawesome_5 %}
 <!DOCTYPE html>
 
 {% block title%}
-Home
+Services
 {% endblock %}
 
 {% block content %}
@@ -36,127 +37,23 @@ Home
                     </div>
                 </div>
                 <div class="row">
+                    {% if service %}
+                    {% for s in service %}
                     <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="single-cat text-center mb-50" style="min-height: 410px; max-height: 410px;">
+                        <div class="single-cat text-center mb-50" style="min-height: 450px; max-height: 450px;">
                             <div class="cat-icon">
-                                <span class="flaticon-development"></span>
+                               
+                                <span class="">{{ s.icon.as_html }}</span>
+                             
                             </div>
                             <div class="cat-cap">
-                                <h5><a href="{%url 'eaglesbrandapp:service_detail' %}">OEM Representation </a></h5>
-                                <p>There are many variations of passages of lorem Ipsum available but the new majority have suffered.</p>
+                                <h5><a href="{{ s.get_service_url }}">{{ s.pst_title}}</a></h5>
+                                <p>{{ s.content|safe|truncatewords:20| slice:":400"  }}</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="single-cat text-center mb-50" style="min-height: 410px; max-height: 410px;">
-                            <div class="cat-icon">
-                                <span class="flaticon-result"></span>
-                            </div>
-                            <div class="cat-cap">
-                                <h5><a href="{%url 'eaglesbrandapp:service_detail' %}">Electrical Engineering System Design</a></h5>
-                                <p>There are many variations of passages of lorem Ipsum available but the new majority have suffered.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="single-cat text-center mb-50" style="min-height: 410px; max-height: 410px;">
-                            <div class="cat-icon">
-                                <span class="flaticon-team"></span>
-                            </div>
-                            <div class="cat-cap">
-                                <h5><a href="{%url 'eaglesbrandapp:service_detail' %}">Consultancy Services</a></h5>
-                                <p>There are many variations of passages of lorem Ipsum available but the new majority have suffered.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="single-cat text-center mb-50" style="min-height: 410px; max-height: 410px;">
-                            <div class="cat-icon">
-                                <span class="fa fa-gears"></span>
-                            </div>
-                            <div class="cat-cap">
-                                <h5><a href="{%url 'eaglesbrandapp:service_detail' %}">Mechanical Drive System Design</a></h5>
-                                <p>There are many variations of passages of lorem Ipsum available but the new majority have suffered.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="single-cat text-center mb-50" style="min-height: 410px; max-height: 410px;">
-                            <div class="cat-icon">
-                                <span class="fa fa-users"></span>
-                            </div>
-                            <div class="cat-cap">
-                                <h5><a href="{%url 'eaglesbrandapp:service_detail' %}">Training in Electrical/Automation & Control</a></h5>
-                                <p>There are many variations of passages of lorem Ipsum available but the new majority have suffered.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="single-cat text-center mb-50" style="min-height: 410px; max-height: 410px;">
-                            <div class="cat-icon">
-                                <span class="fa fa-desktop"></span>
-                            </div>
-                            <div class="cat-cap">
-                                <h5><a href="{%url 'eaglesbrandapp:service_detail' %}">Motor Drives/Inverters Installation and Programming</a></h5>
-                                <p>There are many variations of passages of lorem Ipsum available but the new majority have suffered.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="single-cat text-center mb-50" style="min-height: 410px; max-height: 410px;">
-                            <div class="cat-icon">
-                                <span class="fa fa-desktop"></span>
-                            </div>
-                            <div class="cat-cap">
-                                <h5><a href="{%url 'eaglesbrandapp:service_detail' %}">Power System Solutions (Indusrtial & Residential)</a></h5>
-                                <p>There are many variations of passages of lorem Ipsum available but the new majority have suffered.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="single-cat text-center mb-50" style="min-height: 410px; max-height: 410px;">
-                            <div class="cat-icon">
-                                <span class="fa fa-desktop"></span>
-                            </div>
-                            <div class="cat-cap">
-                                <h5><a href="{%url 'eaglesbrandapp:service_detail' %}">Electro-mechanical Systems Solution</a></h5>
-                                <p>There are many variations of passages of lorem Ipsum available but the new majority have suffered.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="single-cat text-center mb-50" style="min-height: 410px; max-height: 410px;">
-                            <div class="cat-icon">
-                                <span class="fa fa-cogs"></span>
-                            </div>
-                            <div class="cat-cap">
-                                <h5><a href="{%url 'eaglesbrandapp:service_detail' %}">Indusrtial Machines Installation, Maintainace and Repair</a></h5>
-                                <p>There are many variations of passages of lorem Ipsum available but the new majority have suffered.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6 offset-2">
-                        <div class="single-cat text-center mb-50" style="min-height: 410px; max-height: 410px;">
-                            <div class="cat-icon">
-                                <span class="fa fa-copy"></span>
-                            </div>
-                            <div class="cat-cap">
-                                <h5><a href="{%url 'eaglesbrandapp:service_detail' %}">General Contracts</a></h5>
-                                <p>There are many variations of passages of lorem Ipsum available but the new majority have suffered.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="single-cat text-center mb-50" style="min-height: 410px; max-height: 410px;">
-                            <div class="cat-icon">
-                                <span class="fa fa-desktop"></span>
-                            </div>
-                            <div class="cat-cap">
-                                <h5><a href="{%url 'eaglesbrandapp:service_detail' %}">Motor Drives/Inverters Installation and Programming</a></h5>
-                                <p>There are many variations of passages of lorem Ipsum available but the new majority have suffered.</p>
-                            </div>
-                        </div>
-                    </div>
+                    {% endfor %}
+                    {% endif %}
                 </div>
             </div>
         </div>

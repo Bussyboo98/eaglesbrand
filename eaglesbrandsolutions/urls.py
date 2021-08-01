@@ -21,9 +21,14 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.conf.urls import url
 
+from filebrowser.sites import site
+
 
 urlpatterns = [
     path('', views.index, name='index'),
+    path('tinymce/', include('tinymce.urls')),
+    path('admin/filebrowser/', site.urls),
+    path('search/', views.search, name='search'),
     path('pages/', include('eaglesbrandapp.urls')),
     path('admin/', admin.site.urls),
 ]

@@ -3576,7 +3576,7 @@ hero-btn {
   background-image: url(../img/gallery/2ee492b2-e00f-47d8-b080-176eaa232647.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  height: 600px;
+  height: 450px;
  
 }
 
@@ -3584,11 +3584,11 @@ hero-btn {
   background-image: url(../img/gallery/9262c19b-7b23-4c40-9a9b-d550ac3ca521.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  height: 600px;
+  height: 450px;
 }
 .slider-area9 {
   background-image: url(../img/gallery/about.jpg);
-  height: 600px;
+  height: 450px;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -3597,13 +3597,13 @@ hero-btn {
   background-image: url(../img/gallery/ww.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  height: 600px;
+  height: 450px;
 }
 
 .slider-area6 {
   background-image: url(../img/gallery/contact.jpg);
   background-repeat: no-repeat;
-  height: 600px;
+  height: 450px;
   background-size: cover;
   background-position-y: -120px;
 
@@ -3783,7 +3783,7 @@ hero-btn {
   content: "";
   background-color: rgb(141 198 64 / 50%);
   width: 100%;
-  height: 600px;
+  height: 450px;
   left: 0;
   top: 0;
   bottom: 0;
@@ -4098,7 +4098,7 @@ hero-btn {
 /* line 8, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_about.scss */
 .support-company-area .right-caption {
   position: relative;
-  right: -50px;
+  
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
@@ -4146,7 +4146,7 @@ hero-btn {
 /* line 37, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_about.scss */
 .support-company-area .right-caption .support-caption p {
   font-size: 15px;
-  color: #cecece;
+ 
 }
 
 /* line 1, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_count_down.scss */
