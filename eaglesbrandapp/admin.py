@@ -7,6 +7,16 @@ from eaglesbrandapp.models import *
 admin.site.site_header = 'EAGLESBRAND SOLUTIONS'
 
 
+@admin.register(About) 
+class About(admin.ModelAdmin):
+
+    def abt_img1(self, obj):
+        return format_html('<img src="{}" width="100" />'.format(obj.image1.url))
+
+    abt_img1.short_description = 'About'
+
+    list_display = ['abt_img1','title','created',]
+
 
 @admin.register(BlogPost)
 class BlogPost(admin.ModelAdmin):

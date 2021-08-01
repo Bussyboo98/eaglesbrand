@@ -37,10 +37,10 @@ Projects
             <div class="col-lg-6 col-md-6 col-sm-10">
                 <div class="single-services mb-100">
                     <div class="services-img">
-                        <img src="{{ p.img_url }}" alt="">
+                        <img src="{{ p.img_url }}"alt="">
                         </div>
                         <div class="services-caption">
-                        <span>{{ p.pst_title}}</span>
+                        <span style="font-size: 20px; line-height: 20px;">{{ p.pst_title}}</span>
                         <p><a href="{{ p.get_project_url }}">{{ p.content|safe|truncatewords:20| slice:":400"  }}</a></p>
                     </div>
                 </div>
