@@ -1,3 +1,4 @@
+{% load custom_tags %}
 <div class="col-lg-5">
     <div class="blog_right_sidebar">
         <aside class="single_sidebar_widget search_widget">
@@ -13,18 +14,7 @@
         </aside>
         <aside class="single_sidebar_widget popular_post_widget">
             <h3 class="widget_title">Recent Post</h3>
-            {% for e in most_recent %}
-            <div class="media post_item">
-               
-                <img src="{{ e.img_url }}" style="max-height: 100px; min-height: 100px; min-width: 150px; max-width: 150px;" alt="post">
-                <div class="media-body">
-                    <a href="blog_details.html">
-                        <h3>{{ e.pst_title}}</h3>
-                    </a>
-                    <p>{{ e.created}}</p>
-                </div>
-            </div>
-            {% endfor %}
+           {% latest_post %}
         </aside>
         
 
