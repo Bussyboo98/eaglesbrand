@@ -22,8 +22,8 @@ STATIC_DIR = os.path.join(BASE_DIR, 'static')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 STATICFILES_DIRS = [STATIC_DIR,]
-FONTAWESOME_5_CSS='static/frontend/css/all.min.css'
 
+FONTAWESOME_5_CSS = 'fontawesome_5/css/django-fontawesome.css'
 
 EMAIL_HOST = 'smtp.sendgrid.net'
 EMAIL_HOST_USER = 'apikey' #this is exactly the value 'apikey'

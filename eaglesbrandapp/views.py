@@ -22,15 +22,18 @@ def index(request):
     service_home = Services.objects.all()[:3]
     project_home = Project.objects.order_by('-created')[:4]
     blog = BlogPost.objects.order_by('-created')
+    about = About.objects.all()
     context = {
         'service_home': service_home,
         'project_home': project_home,
-        'blog': blog
+        'blog': blog,
+        'about':about
     }
     return render(request, 'eaglesbrandapp/index.html', context)
 
 def about(request):
-    return render(request, 'eaglesbrandapp/about.html')
+    about_us = About.objects.all()
+    return render(request, 'eaglesbrandapp/about.html',{'abt':about_us})
 
 def blog(request):
     most_recent = BlogPost.objects.order_by('created')[:6]

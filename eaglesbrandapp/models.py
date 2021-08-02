@@ -62,6 +62,27 @@ class Comment(models.Model):
     def __str__(self):
         return self.user_name
 
+
+class About(models.Model):
+    title = models.CharField(max_length=50)
+    abt_content = HTMLField('Content')
+    image1 = models.FileField(null=True, blank=True, upload_to='uploads/')
+    our_vision = models.TextField(verbose_name='Our Vision', blank=True, null=True)
+    our_mission = models.TextField(verbose_name='Our Mission', blank=True, null=True)
+    our_value = models.TextField(verbose_name='Our Values', blank=True, null=True)
+    created = models.DateTimeField(auto_now_add=True, help_text='This will automatically add a time when you click save')
+    modified = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.title
+
+    class Meta():
+        verbose_name_plural='About'
+
+    def abt_img1(self):
+        if self.image1:
+            return self.image1.url
+
 class Project(models.Model):
     pst_title = models.CharField(max_length=150, verbose_name='Project Title')
     slug = models.SlugField(unique=True)

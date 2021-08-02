@@ -1,5 +1,6 @@
 {% extends 'eaglesbrandapp/base.html' %}
 {% load static %}
+{% load fontawesome_5 %}
 <!DOCTYPE html>
 
 {% block title%}
@@ -39,7 +40,7 @@ Services
                     {% if service %}
                     {% for s in service %}
                     <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="single-cat text-center mb-50" style="min-height: 410px; max-height: 410px;">
+                        <div class="single-cat text-center mb-50" style="min-height: 450px; max-height: 450px;">
                             <div class="cat-icon">
                                
                                 <span class="">{{ s.icon.as_html }}</span>
