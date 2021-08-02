@@ -180,8 +180,8 @@
                             <div class="footer-tittle">
                                 <h4>Services</h4>
                                 <ul>
-                                    {% for s in service %}
-                                        <li><a href="#">{{ s.pst_title }}</a></li>
+                                    {% for v in services %}
+                                        <li><a href="{{ v.get_service_url }}">{{ v.pst_title }}</a></li>
                                     {% endfor %}
                                 </ul>
                             </div>

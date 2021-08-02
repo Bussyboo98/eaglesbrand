@@ -23,11 +23,13 @@ def index(request):
     project_home = Project.objects.order_by('-created')[:4]
     blog = BlogPost.objects.order_by('-created')
     about = About.objects.all()
+    home = HomeSlider.objects.all()
     context = {
         'service_home': service_home,
         'project_home': project_home,
         'blog': blog,
-        'about':about
+        'about':about,
+        'hme':home,
     }
     return render(request, 'eaglesbrandapp/index.html', context)
 

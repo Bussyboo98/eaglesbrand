@@ -7,3 +7,4 @@ register = template.Library()
 def latest_post():
     posts = BlogPost.objects.order_by('-created')
     return {'most_recent':posts}
+
