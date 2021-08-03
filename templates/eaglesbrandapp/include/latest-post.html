@@ -1,0 +1,12 @@
+{% for e in most_recent %}
+<div class="media post_item">
+   
+    <img src="{{ e.img_url }}" style="max-height: 100px; min-height: 100px; min-width: 150px; max-width: 150px;" alt="post">
+    <div class="media-body">
+        <a href="{% url 'eaglesbrandapp:blog_detail' e.id %}">
+            <h3>{{ e.pst_title}}</h3>
+        </a>
+        <p>{{ e.created|date:'Y M, d'}}</p>
+    </div>
+</div>
+{% endfor %}

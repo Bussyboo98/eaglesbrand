@@ -132,3 +132,17 @@ class Services(models.Model):
         return reverse('eaglesbrandapp:service_detail',kwargs={'slug':self.slug,})
     class Meta():
         verbose_name_plural = 'Services'
+
+class HomeSlider(models.Model):
+    slide_text = models.CharField(blank=True, null=True, max_length=100)
+    slide_content1 = models.TextField(blank=True, null=True)
+    slide_content2 = models.TextField(blank=True, null=True)
+    created = models.DateTimeField(auto_now_add=True, help_text='This will automatically add a time when you click save')
+    modified = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.slide_text
+    
+
+    class Meta():
+        verbose_name_plural = 'Home Slider'

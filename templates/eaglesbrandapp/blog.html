@@ -45,7 +45,7 @@ Blog
                                 </div>
 
                                 <div class="blog_details">
-                                    <a class="d-inline-block" href="{%url 'eaglesbrandapp:blog_detail' e.id %}">
+                                    <a class="d-inline-block" href="{% url 'eaglesbrandapp:blog_detail' e.id %}">
                                         <h2>{{ e.pst_title}}</h2>
                                     </a>
                                     <p> {{ e.content|safe|truncatewords:30| slice:":400"  }}</p>

@@ -180,22 +180,9 @@
                             <div class="footer-tittle">
                                 <h4>Services</h4>
                                 <ul>
-                                    <li><a href="#">
-                                        OEM Representation</a></li>
-                                    <li><a href="#">
-                                        Electrical Engineering System Design</a></li>
-                                    <li><a href="#">
-                                        Consultancy Services</a></li>
-                                    <li><a href="#">
-                                        Mechanical Drive System Design</a></li>
-                                    <li><a href="#">Blog</a>
-                                
-                                    </li>
-                                    <li><a href="#">
-                                        Training in Electrical/Automation & Control</a></li>
-                                    <li><a href="#">
-                                        
-                                            Motor Drives/Inverters Installation and Programming</a></li>
+                                    {% for v in services %}
+                                        <li><a href="{{ v.get_service_url }}">{{ v.pst_title }}</a></li>
+                                    {% endfor %}
                                 </ul>
                             </div>
                         </div>

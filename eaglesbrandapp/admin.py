@@ -57,3 +57,8 @@ class Comment(admin.ModelAdmin):
         'post',
        
     ]
+
+@admin.register(HomeSlider) 
+class HomeSlider(admin.ModelAdmin):
+
+    list_display = ['slide_text', 'created']
