@@ -7,13 +7,13 @@
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<title>
         {% block title%}
-
+            {{ single.pst_title }}
         {% endblock%}
     </title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="manifest" href="site.webmanifest">
-	<link rel="shortcut icon" type="image/x-icon" href="../../static/eaglesbrandapp/assets/img/logo/eagle.png">
+	<link rel="shortcut icon" type="image/x-icon" href="../../static/eaglesbrandapp/assets/img/logo/newlogo.png">
 
 	<!-- CSS here -->
 	<link rel="stylesheet" href="{% static 'eaglesbrandapp/assets/css/bootstrap.min.css' %}">
@@ -52,7 +52,7 @@
         <div class="preloader-inner position-relative">
             <div class="preloader-circle"></div>
             <div class="preloader-img pere-text">
-                <img src="{% static 'eaglesbrandapp/assets/img/logo/eaglesbrand.png' %}"  alt="">
+                <img src="{% static 'eaglesbrandapp/assets/img/logo/newlogo.png' %}"  alt="">
             </div>
         </div>
     </div>
@@ -259,7 +259,7 @@
                           <div class="single-footer-caption mb-50">
                               <!-- logo -->
                               <div class="footer-logo">
-                                  <a href="{%url 'index' %}"><img src="../../static/eaglesbrandapp/assets/img/logo/eaglesbrand.png" height="100px" alt=""></a>
+                                  <a href="{%url 'index' %}"><img src="../../static/eaglesbrandapp/assets/img/logo/newlogo.png" height="100px" alt=""></a>
                               </div>
                               <div class="footer-tittle">
                                   <div class="footer-pera">
