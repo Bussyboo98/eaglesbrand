@@ -23,7 +23,7 @@ class Partner(admin.ModelAdmin):
     def pat_img1(self, obj):
         return format_html('<img src="{}" width="100" />'.format(obj.image1.url))
 
-    pat_img1.short_description = 'About'
+    pat_img1.short_description = 'Partners'
 
     list_display = ['pat_img1','created',]
 
