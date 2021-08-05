@@ -17,6 +17,16 @@ class About(admin.ModelAdmin):
 
     list_display = ['abt_img1','title','created',]
 
+@admin.register(Partner) 
+class Partner(admin.ModelAdmin):
+
+    def pat_img1(self, obj):
+        return format_html('<img src="{}" width="100" />'.format(obj.image1.url))
+
+    pat_img1.short_description = 'About'
+
+    list_display = ['pat_img1','created',]
+
 
 @admin.register(BlogPost)
 class BlogPost(admin.ModelAdmin):

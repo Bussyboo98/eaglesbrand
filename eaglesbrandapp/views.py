@@ -88,9 +88,12 @@ def projects(request):
     project = Project.objects.order_by('-created')
     return render(request, 'eaglesbrandapp/projects.html', {'project':project})
 
+
+
 def service_detail(request, slug):
     service_detail = Services.objects.get(slug=slug)
-    return render(request, 'eaglesbrandapp/service-detail.html', {'service': service_detail})
+    partner = Partner.objects.order_by('-created')
+    return render(request, 'eaglesbrandapp/service-detail.html', {'service': service_detail, 'partner':partner})
 
 def project_detail(request, slug):
     project_post = Project.objects.get(slug=slug)

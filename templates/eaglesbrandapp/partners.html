@@ -1,57 +1,12 @@
-{% load static %}
-<!doctype html>
-<html class="no-js" lang="zxx">
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<title>
-        {% block title%}
-
-        {% endblock%}
-    </title>
-	<meta name="description" content="">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="manifest" href="site.webmanifest">
-	<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
-
-	<!-- CSS here -->
-	<link rel="stylesheet" href="{% static 'eaglesbrandapp/assets/css/bootstrap.min.css' %}">
-	<link rel="stylesheet" href="{% static 'eaglesbrandapp/assets/css/owl.carousel.min.css' %}">
-	<link rel="stylesheet" href="{% static 'eaglesbrandapp/assets/css/slicknav.css' %}">
-	<link rel="stylesheet" href="{% static 'eaglesbrandapp/assets/css/flaticon.css' %}">
-	<link rel="stylesheet" href="{% static 'eaglesbrandapp/assets/css/animate.min.css' %}">
-	<link rel="stylesheet" href="{% static 'eaglesbrandapp/assets/css/magnific-popup.css' %}">
-	<link rel="stylesheet" href="{% static 'eaglesbrandapp/assets/css/fontawesome-all.min.css' %}">
-	<link rel="stylesheet" href="{% static 'eaglesbrandapp/assets/css/themify-icons.css' %}">
-	<link rel="stylesheet" href="{% static 'eaglesbrandapp/assets/css/slick.css' %}">
-	<link rel="stylesheet" href="{% static 'eaglesbrandapp/assets/css/nice-select.css' %}">
-	<link rel="stylesheet" href="{% static 'eaglesbrandapp/assets/css/style.css' %}">
-</head>
-
-<body class="body-bg">
-    <!-- Brand Area Start -->
+{% load custom_tags %}
     <div class="brand-area pb-140">
+       
         <div class="container">
-            <div class="brand-active brand-border pb-40">
-                <div class="single-brand">
-                    <img src="{% static 'eaglesbrandapp/assets/img/gallery/brand1.png' %}" alt="">
-                </div>
-                <div class="single-brand">
-                    <img src="{% static 'eaglesbrandapp/assets/img/gallery/brand2.png' %}" alt="">
-                </div>
-                <div class="single-brand">
-                    <img src="{% static 'eaglesbrandapp/assets/img/gallery/brand3.png' %}" alt="">
-                </div>
-                <div class="single-brand">
-                    <img src="{% static 'eaglesbrandapp/assets/img/gallery/brand4.png' %}" alt="">
-                </div>
-                <div class="single-brand">
-                    <img src="{% static 'eaglesbrandapp/assets/img/gallery/brand2.png' %}" alt="">
-                </div>
-                <div class="single-brand">
-                    <img src="{% static 'eaglesbrandapp/assets/img/gallery/brand5.png' %}" alt="">
-                </div>
+            <div class="brand-border pb-40">
+                 {% partner_pic %}
             </div>
         </div>
+      
     </div>
     <!-- Brand Area End -->
+  

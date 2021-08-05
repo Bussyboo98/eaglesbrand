@@ -146,3 +146,15 @@ class HomeSlider(models.Model):
 
     class Meta():
         verbose_name_plural = 'Home Slider'
+
+class Partner(models.Model):
+    image1 = models.FileField(null=True, blank=True, upload_to='uploads/')
+    created = models.DateTimeField(auto_now_add=True, help_text='This will automatically add a time when you click save')
+    modified = models.DateTimeField(auto_now=True)
+
+    class Meta():
+        verbose_name_plural='Partner'
+    @property
+    def pat_img1(self):
+        if self.image1:
+            return self.image1.url
