@@ -93,6 +93,29 @@ def projects(request):
 def service_detail(request, slug):
     service_detail = Services.objects.get(slug=slug)
     partner = Partner.objects.order_by('-created')
+    if request.method == 'POST':
+        service_detail = Services.objects.get(slug=slug)
+        message = request.POST.get('message')
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        phone = request.POST.get('phone')
+        subject = 'Eaglesbrand Service'
+        context = {
+            'name':name,
+            'phone':phone,
+            'email':email,
+            'service':service_detail.pst_title,
+            'message': message
+        }
+        html_message = render_to_string('eaglesbrandapp/service-mail-template.html', context)
+        plain_message = strip_tags(html_message)
+        from_email = settings.FROM_HOST
+        send = mail.send_mail(subject, plain_message, from_email, 
+                      settings.RECIEVER_MAIL, html_message=html_message, fail_silently=False)
+        if send:
+            messages.success(request, 'Email sent succesfully!')
+        else:
+            messages.error(request, 'Mail not sent! Please make sure you are connected to internet')
     return render(request, 'eaglesbrandapp/service-detail.html', {'service': service_detail, 'partner':partner})
 
 def project_detail(request, slug):
@@ -115,17 +138,17 @@ def search(request):
     }
     return render(request, 'eaglesbrandapp/search_results.html', context)
 
-def blog_detail(request, pk):
-    most_recent = BlogPost.objects.order_by('created')[:6]
-    single_post = get_object_or_404(BlogPost,  pk=pk)
-    comments = Comment.objects.filter(post=pk).order_by('-timestamp')
+def blog_detail(request, slug):
+    most_recent = BlogPost.objects.order_by('created')
+    single_post = get_object_or_404(BlogPost,  slug=slug)
+    comments = Comment.objects.filter(post__slug=slug).order_by('-timestamp')
     if request.method == "POST":
         form = CommentForm(request.POST)
         if form.is_valid():
             comment = form.save(commit=False) 
             comment.post = single_post
             comment.save()
-            return redirect('eaglesbrandapp:blog_detail', pk=single_post.pk)
+            return redirect('eaglesbrandapp:blog_detail', slug=single_post.slug)
             single_post = {'form': form, 'most_recent': most_recent,}
     else:
         form = CommentForm()

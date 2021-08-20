@@ -316,8 +316,8 @@ Home
                                 </ul>
                             </div>
                             <div class="blog-cap" style="min-height: 200px; max-height: 200px;">
-                                <h3><a href="{%url 'eaglesbrandapp:blog_detail' b.id %}">{{ b.content|safe|truncatewords:15| slice:":400"  }}</p>
-                                <a href="{%url 'eaglesbrandapp:blog_detail' b.id %}" class="more-btn">Read more</a>
+                                <h3><a href="{{ b.get_post_url }}">{{ b.content|safe|truncatewords:15| slice:":400"  }}</p>
+                                <a href="{{ b.get_post_url }}" class="more-btn">Read more</a>
                             </div>
                         </div>
                     </div>

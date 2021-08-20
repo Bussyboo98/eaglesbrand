@@ -14,6 +14,6 @@ urlpatterns = [
     path('service_detail-page/<slug:slug>/', views.service_detail, name='service_detail'),
     path('project_detail-page/<slug:slug>/', views.project_detail, name='project_detail'),
     path('search-page/', views.search, name='search'),
-    path('blog-slug/<int:pk>', views.blog_detail, name='blog_detail'),
+    path('blog-slug/<slug:slug>/', views.blog_detail, name='blog_detail'),
     
 ]

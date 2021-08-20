@@ -133,6 +133,8 @@ class Services(models.Model):
     class Meta():
         verbose_name_plural = 'Services'
 
+
+
 class HomeSlider(models.Model):
     slide_text = models.CharField(blank=True, null=True, max_length=100)
     slide_content1 = models.TextField(blank=True, null=True)
