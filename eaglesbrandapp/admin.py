@@ -17,6 +17,16 @@ class About(admin.ModelAdmin):
 
     list_display = ['abt_img1','title','created',]
 
+@admin.register(Team) 
+class Team(admin.ModelAdmin):
+
+    def team_img(self, obj):
+        return format_html('<img src="{}" width="100" />'.format(obj.image.url))
+
+    team_img.short_description = 'Team'
+
+    list_display = ['image','name','position',]
+
 @admin.register(Partner) 
 class Partner(admin.ModelAdmin):
 

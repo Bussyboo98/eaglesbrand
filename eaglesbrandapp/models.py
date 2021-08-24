@@ -160,3 +160,21 @@ class Partner(models.Model):
     def pat_img1(self):
         if self.image1:
             return self.image1.url
+
+
+class Team(models.Model):
+    image = models.FileField(null=True, blank=True, upload_to='uploads/')
+    name = models.CharField(max_length=150)
+    position = models.CharField(max_length=50)
+    created = models.DateTimeField(auto_now_add=True, help_text='This will automatically add a time when you click save')
+    modified = models.DateTimeField(auto_now=True)
+
+    class Meta():
+        verbose_name_plural='Team'
+    @property
+    def team_img(self):
+        if self.image:
+            return self.image.url
+
+    def __str__(self):
+        return self.name

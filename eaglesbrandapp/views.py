@@ -35,7 +35,8 @@ def index(request):
 
 def about(request):
     about_us = About.objects.all()
-    return render(request, 'eaglesbrandapp/about.html',{'abt':about_us})
+    team = Team.objects.order_by('-created')
+    return render(request, 'eaglesbrandapp/about.html',{'abt':about_us, 'team':team})
 
 def blog(request):
     most_recent = BlogPost.objects.order_by('created')[:6]
